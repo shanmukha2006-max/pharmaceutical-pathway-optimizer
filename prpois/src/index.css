@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0d1117;
+  --color-dark-card: #161b22;
+  --color-neon-blue: #58a6ff;
+  
+  --font-sans: "Inter", "Roboto", "Helvetica Neue", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-gray-200 antialiased min-h-screen selection:bg-neon-blue selection:text-white;
+  }
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-dark-card/60 backdrop-blur-md border border-white/5 shadow-lg;
+  }
+  
+  .glass-card {
+    @apply bg-dark-card/80 backdrop-blur-sm border border-white/10 shadow-md rounded-xl transition-all duration-300;
+  }
+  
+  .glow-red {
+    box-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
+    border-color: rgba(255, 50, 50, 0.6);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+  }
+}
